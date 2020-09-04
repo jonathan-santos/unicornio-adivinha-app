@@ -1,8 +1,9 @@
 import React from 'react'
-import { View, Text, TouchableHighlight } from 'react-native'
+import { View, Text } from 'react-native'
 
 import Unicorn from '../../components/unicorn'
 import Navigation from '../../components/navigation'
+import Button from '../../components/button'
 import styles from './styles'
 
 const Home = () => {
@@ -17,9 +18,7 @@ const Home = () => {
 
 				<Text style={styles.text}>Vamos revelar o humor de uma pessoa utilizando apenas uma foto!</Text>
 
-				<TouchableHighlight style={styles.button}>
-					<Text style={styles.buttonText}>Começar</Text>
-				</TouchableHighlight>
+				<Button text='Começar' />
 			</View>
 		</View>
 	)
