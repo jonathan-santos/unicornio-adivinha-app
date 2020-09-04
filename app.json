@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "unicornio-adivinha-app",
-    "slug": "unicornio-adivinha-app",
+    "name": "Unicórnio Adivinha",
+    "slug": "unicornio-adivinha",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
