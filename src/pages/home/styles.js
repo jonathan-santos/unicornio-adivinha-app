@@ -8,35 +8,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: '#4C3470'
   },
-  navigationContainer: {
-    width: '90%',
-    marginBottom: 30,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  navigationHorizontalLine: {
-    height: 4,
-    width: '100%',
-    position: 'absolute',
-    top: '50%',
-    backgroundColor: '#331E54'
-  },
-  navigationIndicator: {
-    height: 64,
-    width: 64,
-    borderRadius: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#331E54',
-    color: '#FFFFFF',
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    fontSize: 28,
-    fontFamily: 'Montserrat_400Regular'
-  },
-  navigationIndicatorSelected: {
-    backgroundColor: '#00C9A8'
-  },
   main: {
     borderRadius: 16,
     padding: 20,
