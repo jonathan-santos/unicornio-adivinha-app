@@ -1,15 +1,13 @@
 import React from 'react'
-import { View, Image, Text, TouchableHighlight } from 'react-native'
+import { View, Text, TouchableHighlight } from 'react-native'
 
-import UnicornImg from '../../assets/unicorn.png'
+import Unicorn from '../../components/unicorn'
 import styles from './styles'
 
 const Home = () => {
 	return (
 		<View style={styles.container}>
-			<View style={styles.iconContainer}>
-				<Image style={styles.icon} source={UnicornImg} />
-			</View>
+			<Unicorn />
 
 			<View style={styles.navigationContainer}>
 				<View style={styles.navigationHorizontalLine}></View>

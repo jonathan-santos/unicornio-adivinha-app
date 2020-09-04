@@ -8,20 +8,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: '#4C3470'
   },
-  iconContainer: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    marginBottom: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#331E54'
-  },
-  icon: {
-    width: 100,
-    marginLeft: 16,
-    resizeMode: 'center'
-  },
   navigationContainer: {
     width: '90%',
     marginBottom: 30,
