@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     textAlign: 'center',
     textAlignVertical: 'center',
-    fontSize: 28
+    fontSize: 28,
+    fontFamily: 'Montserrat_400Regular'
   },
   navigationIndicatorSelected: {
     backgroundColor: '#00C9A8'
@@ -61,7 +62,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
     fontFamily: 'sans-serif',
-    marginBottom: 24
+    marginBottom: 24,
+    fontFamily: 'Montserrat_400Regular'
   },
   button: {
     borderRadius: 16,
@@ -77,6 +79,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
     fontFamily: 'sans-serif',
+    fontFamily: 'Montserrat_400Regular'
   }
 })
 
