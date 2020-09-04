@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: '#4C3470'
   },
-  main: {
+  mainContent: {
     borderRadius: 16,
     padding: 20,
     backgroundColor: '#331E54'
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     fontFamily: 'sans-serif',
     marginBottom: 24,
     fontFamily: 'Montserrat_400Regular'
-  }  
+  }
 })
 
 export default styles

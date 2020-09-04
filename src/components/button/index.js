@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableHighlight, Text } from 'react-native'
 
-import styles from './style'
+import styles from './styles'
 
 const Button = ({ text }) => (
   <TouchableHighlight style={styles.container}>
