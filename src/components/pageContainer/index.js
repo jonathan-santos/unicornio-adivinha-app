@@ -6,15 +6,15 @@ import Navigation from '../navigation'
 import styles from './style'
 
 const PageContainer = ({ pageNumber, children }) => (
-  <View style={styles.container}>
-			<Unicorn />
+	<View style={styles.container}>
+		<Unicorn invert={pageNumber === 2} />
 
-			<Navigation selected={pageNumber} />
+		<Navigation selected={pageNumber} />
 
-			<View style={styles.mainContent}>
-				{children}
-			</View>
+		<View style={styles.mainContent}>
+			{children}
 		</View>
+	</View>
 )
 
 export const TextStyle = styles.text
