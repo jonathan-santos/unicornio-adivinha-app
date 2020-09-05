@@ -8,6 +8,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#00C9A8',
     color: '#FFFFFF'
   },
+  icon: {
+    borderRadius: 100,
+    padding: 12
+  },
   text: {
     color: '#FFFFFF',
     fontSize: 22,
