@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Image, View } from 'react-native'
+import { useHistory } from 'react-router-native'
 import * as ImagePicker from 'expo-image-picker'
 
 import Paragraph from '../../components/paragraph'
@@ -8,6 +9,7 @@ import styles from './style'
 
 const Photo = () => {
   const [photo, setPhoto] = useState('')
+  const history = useHistory()
 
   const handleCameraPress = async () => {
     try {
@@ -54,7 +56,7 @@ const Photo = () => {
   }
 
   const handleYesPress = () => {
-    alert('YES!')
+    history.push('/result')
   }
 
   const GetPhoto = () => (
