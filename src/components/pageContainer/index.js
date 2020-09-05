@@ -17,5 +17,4 @@ const PageContainer = ({ pageNumber, children }) => (
 	</View>
 )
 
-export const TextStyle = styles.text
 export default PageContainer

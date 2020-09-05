@@ -1,9 +1,10 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import { TextStyle } from '../../components/pageContainer'
 
 const Photo = () => (
   <View>
-    <Text>Photo</Text>
+    
   </View>
 )
 

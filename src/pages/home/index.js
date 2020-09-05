@@ -1,8 +1,7 @@
 import React from 'react'
-import { Text } from 'react-native'
 import { useHistory } from 'react-router-native'
 
-import { TextStyle } from '../../components/pageContainer'
+import Paragraph from '../../components/paragraph'
 import Button from '../../components/button'
 
 const Home = () => {
@@ -14,9 +13,9 @@ const Home = () => {
 
 	return (
 		<>
-			<Text style={TextStyle}>Envie uma foto e nossos unicórnions (mix de unicórnio com minions) vão revelar o sentimento da pessoa na foto</Text>
+			<Paragraph>Envie uma foto e nossos unicórnions (mix de unicórnio com minions) vão revelar o sentimento da pessoa na foto</Paragraph>
 
-			<Text style={TextStyle}>Vamos revelar o humor de uma pessoa utilizando apenas uma foto!</Text>
+			<Paragraph>Vamos revelar o humor de uma pessoa utilizando apenas uma foto!</Paragraph>
 
 			<Button
 				text='Começar'
