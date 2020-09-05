@@ -4,8 +4,8 @@ import { View, Image } from 'react-native'
 import UnicornImg from '../../assets/unicorn.png'
 import styles from './styles'
 
-const Unicorn = ({ invert }) => (
-  <View style={styles.container}>
+const Unicorn = ({ invert, color }) => (
+  <View style={[styles.container, color ? { backgroundColor: color } : {}]}>
     <Image
       style={[ styles.image, invert ? styles.invert : {} ]}
       source={UnicornImg}

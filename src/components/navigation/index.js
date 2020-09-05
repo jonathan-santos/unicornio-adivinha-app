@@ -4,9 +4,13 @@ import { Link } from 'react-router-native'
 
 import styles from './styles'
 
-const Navigation = ({ selected }) => {
+const Navigation = ({ pageSelected, color }) => {
   const getIndicatorStyle = (number) => (
-    [ styles.indicator, selected === number ? styles.selected : {} ]
+    [
+      styles.indicator,
+      color ? { backgroundColor: color } : {},
+      pageSelected === number ? styles.selected : {}
+    ]
   )
 
   return (

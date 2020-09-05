@@ -3,6 +3,7 @@ import { Image, View } from 'react-native'
 import { useHistory } from 'react-router-native'
 import * as ImagePicker from 'expo-image-picker'
 
+import PageContainer from '../../components/pageContainer'
 import Paragraph from '../../components/paragraph'
 import Button from '../../components/button'
 import styles from './style'
@@ -101,11 +102,11 @@ const Photo = () => {
   )
 
   return (
-    <>
+    <PageContainer pageNumber={2}>
       {photo
         ? <ConfirmPhoto />
         : <GetPhoto />}
-    </>
+    </PageContainer>
   )
 }
 
