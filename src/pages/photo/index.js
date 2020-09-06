@@ -9,7 +9,7 @@ import Button from '../../components/button'
 import styles from './style'
 
 const Photo = () => {
-  const [photo, setPhoto] = useState('')
+  const [photo, setPhoto] = useState({})
   const history = useHistory()
 
   const handleCameraPress = async () => {
@@ -21,11 +21,15 @@ const Photo = () => {
 
       const result = await ImagePicker.launchCameraAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
-        allowsEditing: false
+        allowsEditing: false,
+        base64: true
       })
 
       if (!result.cancelled) {
-        setPhoto(result.uri)
+        setPhoto({
+          uri: result.uri,
+          data: result.base64
+        })
       }
     } catch (error) {
       alert('Houve algum problema tentando tirar a foto. \nTente novamente ou reclame com o Desenvolvedor')
@@ -42,10 +46,14 @@ const Photo = () => {
       const result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: false,
+        base64: true
       })
   
       if (!result.cancelled) {
-        setPhoto(result.uri)
+        setPhoto({
+          uri: result.uri,
+          data: result.base64
+        })
       }
     } catch (error) {
       alert('Houve algum problema tentando pegar a foto. \nTente novamente ou reclame com o Desenvolvedor')
@@ -57,7 +65,12 @@ const Photo = () => {
   }
 
   const handleYesPress = () => {
-    history.push('/result')
+    history.push({
+      pathname: '/result',
+      state: {
+        photo: photo.data
+      }
+    })
   }
 
   const GetPhoto = () => (
@@ -83,7 +96,7 @@ const Photo = () => {
     <>
       <Image
         style={styles.photo}
-        source={{ uri: photo }}
+        source={{ uri: photo.uri }}
       />
 
       <View style={styles.buttonsContainer}>
@@ -103,7 +116,7 @@ const Photo = () => {
 
   return (
     <PageContainer pageNumber={2}>
-      {photo
+      {photo.uri
         ? <ConfirmPhoto />
         : <GetPhoto />}
     </PageContainer>

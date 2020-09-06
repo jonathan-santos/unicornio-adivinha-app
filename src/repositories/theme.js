@@ -3,7 +3,7 @@ const themes = {
     light: '#90a4ae',
     dark: '#62757f'
   },
-  hapiness: {
+  happiness: {
     light: '#ffff00',
     dark: '#c7cc00'
   },

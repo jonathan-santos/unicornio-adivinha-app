@@ -1,24 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-native'
 
+import { getEmotionFromPhoto } from '../../repositories/emotion'
 import { getTheme } from '../../repositories/theme'
 
 import PageContainer from '../../components/pageContainer'
 import Paragraph from '../../components/paragraph'
 import Button from '../../components/button'
 
-const Result = () => {
+const Result = ({ location }) => {
   const [emotion, setEmotion] = useState('')
   const [quote, setQuote] = useState({})
   const history = useHistory()
 
-  useEffect(() => {
-    setEmotion('neutral')
+  const getData = async () => {
+    const { photo } = location.state
+    const detectedEmotion = await getEmotionFromPhoto(photo)
+
+    setEmotion(detectedEmotion.name)
 
     setQuote({
       message: 'Never apologize for showing feelings. When you do so, you apologize for the truth.',
       author: 'Benjamin Disraeli'
     })
+  }
+
+  useEffect(() => {
+    getData()
   }, [])
   
   const handleRestartPress = () => {
