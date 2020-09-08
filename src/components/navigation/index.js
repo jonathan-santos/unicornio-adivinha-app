@@ -15,7 +15,7 @@ const Navigation = ({ pageSelected, color }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.horizontalLine}></View>
+      <View style={[styles.horizontalLine, color ? { backgroundColor: color } : {}]}></View>
 
       <Link to='/'>
         <Text style={getIndicatorStyle(1)}>1</Text>

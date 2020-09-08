@@ -7,6 +7,7 @@ import { getTheme } from '../../repositories/theme'
 import PageContainer from '../../components/pageContainer'
 import Paragraph from '../../components/paragraph'
 import Button from '../../components/button'
+import Loading from '../../components/loading'
 
 const Result = ({ location }) => {
   const [emotion, setEmotion] = useState('')
@@ -35,13 +36,17 @@ const Result = ({ location }) => {
 
   return (
     <PageContainer pageNumber={3} theme={getTheme(emotion)}>
-      <Paragraph>O sentimento {emotion} foi revelado!</Paragraph>
+      {emotion
+        ? <>
+            <Paragraph>O sentimento {emotion} foi revelado!</Paragraph>
 
-      <Paragraph>"{quote.message}"</Paragraph>
+            <Paragraph>"{quote.message}"</Paragraph>
 
-      <Paragraph>- {quote.author}</Paragraph>
+            <Paragraph>- {quote.author}</Paragraph>
 
-      <Button onPress={handleRestartPress} text='Recomeçar' />
+            <Button onPress={handleRestartPress} text='Recomeçar' />
+          </>
+        : <Loading />}
     </PageContainer>
   )
 }
