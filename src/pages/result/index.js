@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-native'
 
-import { getEmotionFromPhoto } from '../../repositories/emotion'
+import { getEmotionFromPhoto, getEmotionInPt } from '../../repositories/emotion'
+import { getQuote } from '../../repositories/quotes'
 import { getTheme } from '../../repositories/theme'
 
 import PageContainer from '../../components/pageContainer'
@@ -14,20 +15,19 @@ const Result = ({ location }) => {
   const [quote, setQuote] = useState({})
   const history = useHistory()
 
-  const getData = async () => {
-    const { photo } = location.state
-    const detectedEmotion = await getEmotionFromPhoto(photo)
-
-    setEmotion(detectedEmotion.name)
-
-    setQuote({
-      message: 'Never apologize for showing feelings. When you do so, you apologize for the truth.',
-      author: 'Benjamin Disraeli'
-    })
-  }
-
   useEffect(() => {
-    getData()
+    const fetchData = async () => {
+      const { photo } = location.state
+      const results = await Promise.all([
+        getEmotionFromPhoto(photo),
+        getQuote()
+      ])
+  
+      setEmotion(results[0].name)
+      setQuote(results[1])
+    }
+
+    fetchData()
   }, [])
   
   const handleRestartPress = () => {
@@ -38,7 +38,7 @@ const Result = ({ location }) => {
     <PageContainer pageNumber={3} theme={getTheme(emotion)}>
       {emotion
         ? <>
-            <Paragraph>O sentimento {emotion} foi revelado!</Paragraph>
+            <Paragraph>O sentimento {getEmotionInPt(emotion)} foi revelado!</Paragraph>
 
             <Paragraph>"{quote.message}"</Paragraph>
 

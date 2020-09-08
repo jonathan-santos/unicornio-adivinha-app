@@ -31,3 +31,18 @@ export const getEmotionFromPhoto = async (photo) => {
     return highestEmotion
   }
 }
+
+export const getEmotionInPt = (emotionName) => {
+  const translations = {
+    neutral: 'neutro',
+    happiness: 'felicidade',
+    sadness: 'tristeza',
+    surprise: 'surpresa',
+    fear: 'medo',
+    disgust: 'desgosto',
+    contempt: 'desprezo',
+    anger: 'raiva'
+  }
+  
+  return translations[emotionName]
+}
