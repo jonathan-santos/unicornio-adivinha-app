@@ -9,8 +9,8 @@ import Button from '../../components/button'
 import styles from './style'
 
 const Photo = () => {
-  const [photo, setPhoto] = useState({})
-  const history = useHistory()
+  const [photo, setPhoto] = useState({ })
+  const { push } = useHistory()
 
   const handleCameraPress = async () => {
     try {
@@ -65,7 +65,7 @@ const Photo = () => {
   }
 
   const handleYesPress = () => {
-    history.push({
+    push({
       pathname: '/result',
       state: {
         photo: photo.data

@@ -6,10 +6,10 @@ import Paragraph from '../../components/paragraph'
 import Button from '../../components/button'
 
 const Home = () => {
-	const history = useHistory()
+	const { push } = useHistory()
 
-	const handleComecarPress = () => {
-		history.push('/photo')	
+	const handleStartPress = () => {
+		push('/photo')	
 	}
 
 	return (
@@ -20,7 +20,7 @@ const Home = () => {
 
 			<Button
 				text='Começar'
-				onPress={handleComecarPress}
+				onPress={handleStartPress}
 			/>
 		</PageContainer>
 	)

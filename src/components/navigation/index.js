@@ -1,10 +1,14 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import { Link } from 'react-router-native'
+import { View } from 'react-native'
+import { useHistory } from 'react-router-native'
+
+import Button from '../button'
 
 import styles from './styles'
 
 const Navigation = ({ pageSelected, color }) => {
+  const { push } = useHistory()
+  
   const getIndicatorStyle = (number) => (
     [
       styles.indicator,
@@ -13,19 +17,31 @@ const Navigation = ({ pageSelected, color }) => {
     ]
   )
 
+  const handleNavigationItemPress = page => {
+    push(page)
+  }
+
+
   return (
     <View style={styles.container}>
       <View style={[styles.horizontalLine, color ? { backgroundColor: color } : {}]}></View>
 
-      <Link to='/'>
-        <Text style={getIndicatorStyle(1)}>1</Text>
-      </Link>
+      <Button
+        style={getIndicatorStyle(1)}
+        text={1}
+        onPress={() => handleNavigationItemPress('/')}
+      />
 
-      <Link to='/photo'>
-        <Text style={getIndicatorStyle(2)}>2</Text>
-      </Link>
+      <Button
+        style={getIndicatorStyle(2)}
+        text={2}
+        onPress={() => handleNavigationItemPress('/photo')}
+      />
 
-      <Text style={getIndicatorStyle(3)}>3</Text>
+      <Button
+        style={getIndicatorStyle(3)}
+        text={3}
+      />
     </View>
   )
 }
