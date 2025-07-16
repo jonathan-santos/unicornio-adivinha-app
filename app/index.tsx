@@ -7,7 +7,7 @@ import Button from './components/button';
 const Home = () => {
   const router = useRouter()
   
-	const handleStartPress = () => {
+	const handleStart = () => {
     router.push("/photo")
 	}
   
@@ -19,7 +19,7 @@ const Home = () => {
 
       <Button
         text='Começar'
-        onPress={handleStartPress}
+        onPress={handleStart}
       />
     </PageContainer>
   );

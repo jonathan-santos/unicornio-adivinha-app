@@ -1,16 +1,26 @@
-import { View, Text } from "react-native";
+import { useRouter } from 'expo-router';
 
-export default function Index() {
+import Button from '../components/button';
+import PageContainer from '../components/pageContainer';
+import Paragraph from '../components/paragraph';
+
+const Photo = () => {
+  const router = useRouter()
+
+  const handleSend = () => {
+    router.push("/result")
+  }
+  
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#331E54"
-      }}
-    >
-      <Text>Hello there!</Text>
-    </View>
+    <PageContainer pageNumber={2}>
+      <Paragraph>Envie sua Foto</Paragraph>
+
+      <Button
+        text='Enviar Photo'
+        onPress={handleSend}
+      />
+    </PageContainer>
   );
 }
+
+export default Photo
