@@ -1,8 +1,16 @@
 import { View } from "react-native";
+import { useRouter } from 'expo-router';
 
-import Loading from './components/loading';
+import Button from './components/button';
 
-export default function Index() {
+const Home = () => {
+  const router = useRouter()
+  
+	const handleStartPress = () => {
+		// push('/photo')	
+    router.push("/photo")
+	}
+  
   return (
     <View
       style={{
@@ -12,7 +20,12 @@ export default function Index() {
         backgroundColor: "#331E54"
       }}
     >
-      <Loading />
+      <Button
+				text='Começar'
+				onPress={handleStartPress}
+			/>
     </View>
   );
 }
+
+export default Home
