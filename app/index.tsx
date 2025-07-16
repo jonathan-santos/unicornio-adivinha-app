@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 import Loading from './components/loading';
 
@@ -9,6 +9,7 @@ export default function Index() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#331E54"
       }}
     >
       <Loading />
