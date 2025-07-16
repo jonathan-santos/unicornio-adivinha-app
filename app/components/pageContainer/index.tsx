@@ -5,7 +5,7 @@ import Unicorn from '../unicorn'
 import Navigation from '../navigation'
 import styles from './styles'
 
-const PageContainer = ({ pageNumber, theme, children }) => (
+const PageContainer = ({ pageNumber = 1, theme = null, children }) => (
 	<View style={[styles.container, theme ? { backgroundColor: theme.light } : {}]}>
 		<Unicorn invert={pageNumber === 2} color={theme && theme.dark} />
 
