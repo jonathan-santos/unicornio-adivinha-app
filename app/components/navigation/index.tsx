@@ -1,13 +1,13 @@
 import React from 'react'
 import { View } from 'react-native'
-import { useHistory } from 'react-router-native'
+import { useRouter } from 'expo-router';
 
 import Button from '../button'
 
 import styles from './styles'
 
 const Navigation = ({ pageSelected, color }) => {
-  const { push } = useHistory()
+  const { push } = useRouter()
   
   const getIndicatorStyle = (number) => (
     [

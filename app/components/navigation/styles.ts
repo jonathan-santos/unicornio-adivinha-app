@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 28,
-    fontFamily: 'Montserrat_400Regular'
+    // fontFamily: 'Montserrat_400Regular'
   },
   selected: {
     backgroundColor: '#00C9A8'

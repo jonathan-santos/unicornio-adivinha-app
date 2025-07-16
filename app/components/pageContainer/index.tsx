@@ -3,7 +3,7 @@ import { View } from 'react-native'
 
 import Unicorn from '../unicorn'
 import Navigation from '../navigation'
-import styles from './style'
+import styles from './styles'
 
 const PageContainer = ({ pageNumber, theme, children }) => (
 	<View style={[styles.container, theme ? { backgroundColor: theme.light } : {}]}>
