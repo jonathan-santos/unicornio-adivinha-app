@@ -67,9 +67,9 @@ const Photo = () => {
   const handleYesPress = () => {
     router.push({
       pathname: '/result',
-      // state: {
-      //   photo: photo.data
-      // } // TODO: Send state between pages
+      params: {
+        photo: photo.data
+      }
     })
   }
 

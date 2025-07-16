@@ -32,13 +32,13 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#331E54"
-        },
-        [
+        }
+      ],
+      [
         "expo-image-picker",
         {
           "photosPermission": "The app accesses your photos to let you analyze the emotions in them."
         }
-      ]
       ]
     ],
     "experiments": {
