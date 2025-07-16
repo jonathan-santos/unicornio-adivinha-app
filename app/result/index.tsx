@@ -15,13 +15,13 @@ const Result = () => {
   const { photo } = useLocalSearchParams();
 
   const [emotion, setEmotion] = useState('')
-  const [quote, setQuote]: any = useState({})
+
+  const quote = getQuote()
 
   useEffect(() => {
     setTimeout(() => {
-      setEmotion(getEmotionFromPhoto(photo))
-      setQuote(getQuote())
-    }, 3000)
+      setEmotion(getEmotionFromPhoto(photo as string))
+    }, 2000)
   }, [photo])
   
   const handleRestartPress = () => {
