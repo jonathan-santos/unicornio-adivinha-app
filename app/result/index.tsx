@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter, useLocalSearchParams } from 'expo-router'
 
-// import { getEmotionFromPhoto, getEmotionInPt } from '../../repositories/emotion'
+import { getEmotionFromPhoto, getEmotionInPt } from '../../repositories/emotions'
 import { getQuote } from '../../repositories/quotes'
 import { getTheme } from '../../repositories/themes'
 
@@ -19,21 +19,9 @@ const Result = () => {
   const [emotion, setEmotion] = useState('')
   const [quote, setQuote]: any = useState({})
 
-  const getEmotionFromPhoto = (photo) => "neutro"
-  const getEmotionInPt = (emotion) => "Neutro"
-
   useEffect(() => {
-    const fetchData = async () => {
-      const results = await Promise.all([
-        getEmotionFromPhoto(photo),
-        setQuote(getQuote())
-      ])
-  
-      setEmotion(results[0])
-    }
-    
     setTimeout(() => {
-      setEmotion('neutral')
+      setEmotion(getEmotionFromPhoto(photo))
       setQuote(getQuote())
     }, 3000)
   }, [photo])
