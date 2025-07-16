@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useRouter, useLocalSearchParams } from 'expo-router'
 
 // import { getEmotionFromPhoto, getEmotionInPt } from '../../repositories/emotion'
-// import { getQuote } from '../../repositories/quotes'
+import { getQuote } from '../../repositories/quotes'
 import { getTheme } from '../../repositories/themes'
 
 import PageContainer from './../components/pageContainer'
@@ -11,6 +11,8 @@ import Button from './../components/button'
 import Loading from './../components/loading'
 
 const Result = () => {
+  console.log(getQuote())
+  
   const router = useRouter()
   const { photo } = useLocalSearchParams();
 
@@ -19,24 +21,20 @@ const Result = () => {
 
   const getEmotionFromPhoto = (photo) => "neutro"
   const getEmotionInPt = (emotion) => "Neutro"
-  const getQuote = () => {}
 
   useEffect(() => {
     const fetchData = async () => {
       const results = await Promise.all([
         getEmotionFromPhoto(photo),
-        getQuote()
+        setQuote(getQuote())
       ])
   
       setEmotion(results[0])
-      setQuote(results[1])
     }
-
-    // fetchData()
-
+    
     setTimeout(() => {
       setEmotion('neutral')
-      setQuote({ author: "Hello", message: "There" })
+      setQuote(getQuote())
     }, 3000)
   }, [photo])
   
