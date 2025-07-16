@@ -11,8 +11,6 @@ import Button from './../components/button'
 import Loading from './../components/loading'
 
 const Result = () => {
-  console.log(getQuote())
-  
   const router = useRouter()
   const { photo } = useLocalSearchParams();
 
