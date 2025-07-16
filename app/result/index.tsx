@@ -3,7 +3,7 @@ import { useRouter, useLocalSearchParams } from 'expo-router'
 
 // import { getEmotionFromPhoto, getEmotionInPt } from '../../repositories/emotion'
 // import { getQuote } from '../../repositories/quotes'
-// import { getTheme } from '../../repositories/theme'
+import { getTheme } from '../../repositories/themes'
 
 import PageContainer from './../components/pageContainer'
 import Paragraph from './../components/paragraph'
@@ -14,13 +14,12 @@ const Result = () => {
   const router = useRouter()
   const { photo } = useLocalSearchParams();
 
-  const [emotion, setEmotion] = useState({})
+  const [emotion, setEmotion] = useState('')
   const [quote, setQuote]: any = useState({})
 
   const getEmotionFromPhoto = (photo) => "neutro"
   const getEmotionInPt = (emotion) => "Neutro"
-  const getQuote = () => ({ author: "Hello", message: "There" })
-  const getTheme = (emotion) => ({ light: '#90a4ae', dark: '#62757f' })
+  const getQuote = () => {}
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,26 +32,35 @@ const Result = () => {
       setQuote(results[1])
     }
 
-    fetchData()
+    // fetchData()
+
+    setTimeout(() => {
+      setEmotion('neutral')
+      setQuote({ author: "Hello", message: "There" })
+    }, 3000)
   }, [photo])
   
   const handleRestartPress = () => {
     router.push('/photo')
   }
 
+  if (!emotion) {
+    return (
+      <PageContainer pageNumber={3}>
+        <Loading />
+      </PageContainer>
+    )
+  }
+
   return (
     <PageContainer pageNumber={3} theme={getTheme(emotion)}>
-      {emotion
-        ? <>
-            <Paragraph>O sentimento {getEmotionInPt(emotion)} foi revelado!</Paragraph>
+      <Paragraph>O sentimento {getEmotionInPt(emotion)} foi revelado!</Paragraph>
 
-            <Paragraph>&quot;{quote.message}&quot;</Paragraph>
+      <Paragraph>&quot;{quote.message}&quot;</Paragraph>
 
-            <Paragraph>- {quote.author}</Paragraph>
+      <Paragraph>- {quote.author}</Paragraph>
 
-            <Button onPress={handleRestartPress} text='Recomeçar' />
-          </>
-        : <Loading />}
+      <Button onPress={handleRestartPress} text='Recomeçar' />
     </PageContainer>
   )
 }
