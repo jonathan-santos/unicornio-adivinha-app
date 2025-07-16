@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 import styles from './styles'
 
-const Button = ({ style = null, icon = null, onPress = null, text}) => {
+const Button = ({ style = null, icon = null, onPress = null, text = "" }) => {
   const buttonStyles = [
     styles.container,
     style,

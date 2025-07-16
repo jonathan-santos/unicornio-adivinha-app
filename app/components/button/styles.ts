@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
     fontFamily: 'sans-serif',
-    fontFamily: 'Montserrat_400Regular'
+    // fontFamily: 'Montserrat_400Regular'
   }
 })
 
