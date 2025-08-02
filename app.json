@@ -2,7 +2,7 @@
   "expo": {
     "name": "Unicórnio Adivinha",
     "slug": "unicornio-adivinha",
-    "version": "2.0.0",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "unicornioadivinha",
@@ -14,10 +14,13 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#331E54"
       },
       "edgeToEdgeEnabled": true,
-      "package": "io.jhow.unicornioadivinha"
+      "package": "io.jhow.guesserunicorn",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -44,6 +47,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "4df69811-be9d-409a-86e0-8389923de80d"
+      }
     }
   }
 }
