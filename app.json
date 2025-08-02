@@ -2,7 +2,7 @@
   "expo": {
     "name": "Unicórnio Adivinha",
     "slug": "unicornio-adivinha",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "unicornioadivinha",
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#331E54"
       },
       "edgeToEdgeEnabled": true,
