@@ -84,7 +84,7 @@ const Photo = () => {
         onPress={handleCameraPress}
       />
 
-      <Paragraph>Pegar da galeria</Paragraph>
+      <Paragraph>Ou pegar da galeria</Paragraph>
 
       <Button
         icon='image'
